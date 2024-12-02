@@ -1,0 +1,4 @@
+#!/bin/bash
+
+grep -o -- '[0-9].* ' input.txt > column1.txt
+grep -o -- ' .[0-9]*$' input.txt > column2.txt
