@@ -20,3 +20,16 @@ for line_number in {1..1000}; do
 done
 
 echo "Total is $total_diff"
+
+for line_number in {1..1000}; do
+
+    value1=$(sed "$line_number!d" column1.txt)
+
+    sim=$(grep -o "$value1" column2.txt | wc -l)
+
+    sim_score=$((sim * value1))
+    echo "$value1 similarity score: $sim_score"
+
+    total_sim_score=$((total_sim_score + sim_score))
+done
+echo "total similarity score: $total_sim_score"
