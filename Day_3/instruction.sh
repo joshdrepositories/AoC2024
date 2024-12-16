@@ -1,6 +1,6 @@
 #!/bin/bash
 
-grep -Eo -- 'mul\([0-9]+,[0-9]+\)' input.txt | sed 's/mul//' | sed 's/,/*/' | sed 's/((/(/' | sed 's/))/)/' > uncorrupted.txt
+grep -Eo -- 'mul\([0-9]+,[0-9]+\)' input.txt | sed 's/mul//' | sed 's/,/*/' > uncorrupted.txt
 
 total_lines=$(wc -l < uncorrupted.txt)
 
